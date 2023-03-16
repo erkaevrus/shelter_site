@@ -1,0 +1,46 @@
+// .common-background {
+//     background: $color-background-gradient;
+//     background-image: url("../img/not-only/background.png");
+// }
+
+.header {
+    padding: 60px 0;
+}
+
+.header__container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo__subtitle {
+    margin: 0;
+    padding-top: 10px;
+    font-family: 'Arial', sans-serif;
+    font-size: 1.3rem;
+    line-height: 1.5rem;
+    letter-spacing: 0.14rem;
+}
+
+.navigation {
+    display: flex;
+    font-family: 'Arial', sans-serif;
+    line-height: 2.4rem;
+}
+
+.navigation__item {
+    list-style: none;
+    padding: 0 17.5px;
+    &:last-child {
+        padding-right: 0;
+    }
+}
+
+.navigation__link {
+    &:hover {
+        border-bottom: 3px solid $color-primary;
+    }
+    &--underlined {
+        padding-bottom: 5px;
+        border-bottom: 3px solid $color-primary;
+    }
+}

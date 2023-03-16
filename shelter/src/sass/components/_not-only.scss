@@ -1,0 +1,20 @@
+.not-only__container {
+    display:flex;
+    justify-content: space-between;
+}
+
+.not-only__content {
+    padding: 163px 42px 0 0;
+}
+
+.not-only__title {
+    max-width: 310px;
+    padding-bottom: 42px;
+}
+
+.not-only__text {
+    font-family: 'Arial', sans-serif;
+    font-size: 1.5rem;
+    line-height: 2.4rem;
+    padding-bottom: 42px;
+}

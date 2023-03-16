@@ -1,0 +1,34 @@
+html {
+    font-size: 10px;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    font-size: 1.5rem;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1, h2, h3, h4, p {
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    @include font($size: 3.2rem, $height: 3.5rem);
+}
+
+h2 {
+    @include font($size: 4.4rem, $height: 5.7rem, $spacing: 0);
+}
+
+h3 {
+    @include font($size: 3.5rem, $height: 4.5rem);
+}
+
+h4 {
+    @include font($size: 2.0rem, $height: 2.3rem);
+}
