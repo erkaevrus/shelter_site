@@ -5,6 +5,11 @@
 
 .not-only__content {
     padding: 163px 42px 0 0;
+    max-width: 460px;
+    &>button {
+        width: 207px;
+        height: 52px;
+    }
 }
 
 .not-only__title {
@@ -17,4 +22,13 @@
     font-size: 1.5rem;
     line-height: 2.4rem;
     padding-bottom: 42px;
+}
+
+.not-only__img-container {
+    background-image: url("../../src/img/not-only/not-only.png");
+    width: 698px;
+    height: 728px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 }

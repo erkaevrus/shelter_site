@@ -1,11 +1,11 @@
 .button {
-    padding: 15px 45px;
     border-radius: 100px;
     font-family: 'Georgia', serif;
     font-style: normal;
     font-weight: 400;
     font-size: 1.7rem;
     line-height: 2.2rem;
+    letter-spacing: 0.06rem;
     cursor: pointer;
     @extend %transition;
     &--colored {

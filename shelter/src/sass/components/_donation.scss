@@ -1,0 +1,29 @@
+.donation {
+    background-color: $color-background-main;
+    padding-top: 80px;
+    padding-bottom: 100px;
+}
+
+.donation__container {
+    display: flex;
+    justify-content: center;
+}
+
+.donation__img-container {
+    background-image: url("../../src/img/donation/donation-dog.png");
+    width: 505px;
+    height: 261px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.donation__content {
+    max-width: 380px;
+    padding-left: 30px;
+}
+
+.donation__title {
+    max-width: 300px;
+    text-align: start;
+}

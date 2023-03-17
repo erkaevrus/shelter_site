@@ -1,0 +1,101 @@
+.help {
+    background-color: $color-light;
+    padding-top: 80px;
+    padding-bottom: 100px;
+}
+
+.help__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.help__title {
+    max-width: 308px;
+    text-align: center;
+    padding-bottom: 60px;
+    white-space: pre;
+}
+
+.help__content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 55px 119px;
+    max-width: 1026px;
+}
+
+.help__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.ico {
+    display: block;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    padding-bottom: 30px;
+}
+
+.ico--food {
+    background-image: url("../../src/img/help/pet-food.svg");
+    width: 60px;
+    height: 60px;
+}
+
+.ico--transportation {
+    background-image: url("../../src/img/help/transportation.svg");
+    width: 60px;
+    height: 60px;
+}
+
+.ico--toys {
+    background-image: url("../../src/img/help/toys.svg");
+    width: 60px;
+    height: 60px;
+}
+
+.ico--bowls-and-cups {
+    background-image: url("../../src/img/help/bowls-and-cups.svg");
+    width: 60px;
+    height: 60px;
+}
+
+.ico--shampoos {
+    background-image: url("../../src/img/help/shampoos.svg");
+    width: 60px;
+    height: 60px;
+}
+
+.ico--vitamins {
+    background-image: url("../../src/img/help/vitamins.svg");
+    width: 60px;
+    height: 60px;
+}
+
+.ico--medicines {
+    background-image: url("../../src/img/help/medicines.svg");
+    width: 60px;
+    height: 60px;
+}
+
+.ico--collars-leashes {
+    background-image: url("../../src/img/help/collars-leashes.svg");
+    width: 60px;
+    height: 60px;
+}
+
+.ico--sleeping-area {
+    background-image: url("../../src/img/help/sleeping-area.svg");
+    width: 60px;
+    height: 60px;
+}
+
+.help__content {
+    display: flex;
+    flex-wrap: wrap;
+}

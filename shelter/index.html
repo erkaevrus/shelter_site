@@ -44,13 +44,15 @@
                     <p class="not-only__text">We offer to give a chance to a little and nice puppy with an extremely wide and open heart. He or she will love you more than anybody else in the world, you will see!</p>
                     <button class="button button--colored">Make a friend</button>
                 </div>
-                <img class="not-only__image" src="./src/img/not-only/not-only.png" alt="puppy">
+                <div class="not-only__img-container">
+                </div>
             </div>
         </section>
     </div>
     <section class="about">
-        <div class="container">
-            <img class="about__image" src="./src/img/about/about.png" alt="cat and dog">
+        <div class="container about__container">
+            <div class="about__img-container">
+            </div>
             <div class="about__content">
                 <h3 class="about__title">About the shelter “Cozy House”</h3>
                 <p class="about__text">Currently we have 121 dogs and 342 cats on our hands and statistics show that only 20% of them will find a family. The others will continue to live with us and will be waiting for a lucky chance to become dearly loved.</p>
@@ -59,26 +61,53 @@
         </div>
     </section>
     <section class="friends">
-        <div class="container">
+        <div class="container friends__container">
             <h3 class="friends__title">Our friends who
                 are looking for a house</h3>
             <div class="slider">
                 <button class="btn-round"><span class="btn-round--arrow-left"></span></button>
-                <div class="slider-line">
-                    <div class="slider__item">
-                        <img class="slider__image" src="./src/img/friends/cat-1.png" alt="cat" >
-                        <p class="slider__title">Katrine</p>
-                        <button class="button button--bordered">Learn more</button>
-                    </div>
-                    <div class="slider__item">
-                        <img class="slider__image" src="./src/img/friends/dog-1.png" alt="cat" >
-                        <p class="slider__title">Jennifer</p>
-                        <button class="button button--bordered">Learn more</button>
-                    </div>
-                    <div class="slider__item">
-                        <img class="slider__image" src="./src/img/friends/dog-2.png" alt="cat" >
-                        <p class="slider__title">Woody</p>
-                        <button class="button button--bordered">Learn more</button>
+                <div class="slider__container">
+                    <div class="slider__line">
+                        <div class="slider__item">
+                            <img class="slider__img" src="./src/img/friends/pets-katrine.png" alt="cat" >
+                            <p class="slider__title">Katrine</p>
+                            <button class="button button--bordered">Learn more</button>
+                        </div>
+                        <div class="slider__item">
+                            <img class="slider__img" src="./src/img/friends/pets-jennifer.png" alt="puppy" >
+                            <p class="slider__title">Jennifer</p>
+                            <button class="button button--bordered">Learn more</button>
+                        </div>
+                        <div class="slider__item">
+                            <img class="slider__img" src="./src/img/friends/pets-woody.png" alt="dog" >
+                            <p class="slider__title">Woody</p>
+                            <button class="button button--bordered">Learn more</button>
+                        </div>
+                        <div class="slider__item">
+                            <img class="slider__img" src="./src/img/friends/pets-sophia.png" alt="dog" >
+                            <p class="slider__title">Sophia</p>
+                            <button class="button button--bordered">Learn more</button>
+                        </div>
+                        <div class="slider__item">
+                            <img class="slider__img" src="./src/img/friends/pets-timmy.png" alt="dog" >
+                            <p class="slider__title">Timmy</p>
+                            <button class="button button--bordered">Learn more</button>
+                        </div>
+                        <div class="slider__item">
+                            <img class="slider__img" src="./src/img/friends/pets-charly.png" alt="dog" >
+                            <p class="slider__title">Charly</p>
+                            <button class="button button--bordered">Learn more</button>
+                        </div>
+                        <div class="slider__item">
+                            <img class="slider__img" src="./src/img/friends/pets-scarlet.png" alt="dog" >
+                            <p class="slider__title">Scarlett</p>
+                            <button class="button button--bordered">Learn more</button>
+                        </div>
+                        <div class="slider__item">
+                            <img class="slider__img" src="./src/img/friends/pets-freddle.png" alt="dog" >
+                            <p class="slider__title">Freddie</p>
+                            <button class="button button--bordered">Learn more</button>
+                        </div>
                     </div>
                 </div>
                 <button class="btn-round"><span class="btn-round--arrow-right"></span></button>
@@ -87,51 +116,53 @@
         </div>
     </section>
     <section class="help">
-        <div class="container">
-            <h3 class="help__title">How you can help our shelter</h3>
+        <div class="container help__container">
+            <h3 class="help__title">How you can help
+our shelter</h3>
             <div class="help__content">
                 <div class="help__item">
                     <span class="ico ico--food"></span>
-                    <p class="help__text">Pet food</p>
+                    <h4 class="help__text">Pet food</h4>
                 </div>
                 <div class="help__item">
                     <span class="ico ico--transportation"></span>
-                    <p class="help__text">Transportation</p>
+                    <h4 class="help__text">Transportation</h4>
                 </div>
                 <div class="help__item">
                     <span class="ico ico--toys"></span>
-                    <p class="help__text">Toys</p>
+                    <h4 class="help__text">Toys</h4>
                 </div>
                 <div class="help__item">
                     <span class="ico ico--bowls-and-cups"></span>
-                    <p class="help__text">Bowls and cups</p>
+                    <h4 class="help__text">Bowls and cups</h4>
                 </div>
                 <div class="help__item">
                     <span class="ico ico--shampoos"></span>
-                    <p class="help__text">Shampoos</p>
+                    <h4 class="help__text">Shampoos</h4>
                 </div>
                 <div class="help__item">
                     <span class="ico ico--vitamins"></span>
-                    <p class="help__text">Vitamins</p>
+                    <h4 class="help__text">Vitamins</h4>
                 </div>
                 <div class="help__item">
                     <span class="ico ico--medicines"></span>
-                    <p class="help__text">Medicines</p>
+                    <h4 class="help__text">Medicines</h4>
                 </div>
                 <div class="help__item">
                     <span class="ico ico--collars-leashes"></span>
-                    <p class="help__text">Collars / leashes</p>
+                    <h4 class="help__text">Collars / leashes</h4>
                 </div>
                 <div class="help__item">
-                    <span class="ico ico--spleaping-areas"></span>
-                    <p class="help__text">Sleeping areas</p>
+                    <span class="ico ico--sleeping-area"></span>
+                    <h4 class="help__text">Sleeping areas</h4>
                 </div>
             </div>
         </div>
     </section>
     <section class="donation">
-        <div class="container">
-            <img class="donation__image" src="./src/img/donation/donation-dog.png" alt="dog" >
+        <div class="container donation__container">
+            <div class="donation__img-container">
+            </div>
             <div class="donation__content">
                 <h3 class="donation__title">You can also make a donation</h3>
                 <p class="donation__subtitle">Name of the bank / Type of bank account</p>
