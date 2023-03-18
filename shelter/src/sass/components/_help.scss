@@ -16,6 +16,7 @@
     text-align: center;
     padding-bottom: 60px;
     white-space: pre;
+    color: $color-dark-l;
 }
 
 .help__content {
@@ -31,14 +32,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-}
-
-
-.ico {
-    display: block;
-    background-repeat: no-repeat;
-    cursor: pointer;
-    padding-bottom: 30px;
+    &>.ico {
+        padding-bottom: 30px;
+    }
 }
 
 .ico--food {
@@ -98,4 +94,8 @@
 .help__content {
     display: flex;
     flex-wrap: wrap;
+}
+
+.help__text {
+    color: $color-dark-l;
 }

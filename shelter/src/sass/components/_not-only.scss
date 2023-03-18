@@ -1,5 +1,5 @@
 .not-only__container {
-    display:flex;
+    display: flex;
     justify-content: space-between;
 }
 
@@ -15,20 +15,18 @@
 .not-only__title {
     max-width: 310px;
     padding-bottom: 42px;
+    color: $color-light;
 }
 
 .not-only__text {
-    font-family: 'Arial', sans-serif;
-    font-size: 1.5rem;
-    line-height: 2.4rem;
+    @extend %font-add;
     padding-bottom: 42px;
+    color: $color-additional;
 }
 
 .not-only__img-container {
     background-image: url("../../src/img/not-only/not-only.png");
     width: 698px;
     height: 728px;
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
+    @extend %img-container;
 }

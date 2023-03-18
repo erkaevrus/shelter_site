@@ -1,7 +1,6 @@
-// .common-background {
-//     background: $color-background-gradient;
-//     background-image: url("../img/not-only/background.png");
-// }
+.common-background {
+    background-image: url("../img/not-only/background.png"), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%);
+}
 
 .header {
     padding: 60px 0;
@@ -12,19 +11,21 @@
     justify-content: space-between;
 }
 
+.logo__title {
+    color: $color-primary;
+}
+
 .logo__subtitle {
-    margin: 0;
     padding-top: 10px;
-    font-family: 'Arial', sans-serif;
-    font-size: 1.3rem;
-    line-height: 1.5rem;
-    letter-spacing: 0.14rem;
+    @extend %font-add;
+    @include font($size: 1.3rem, $height: 1.5rem, $spacing: 0.14rem);
+    color: $color-light;
 }
 
 .navigation {
     display: flex;
-    font-family: 'Arial', sans-serif;
-    line-height: 2.4rem;
+    @extend %font-add;
+    color: $color-background-additional;
 }
 
 .navigation__item {

@@ -1,0 +1,83 @@
+.footer {
+    background-image: url("../img/not-only/background.png"), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%);
+    padding-top: 40px;
+}
+
+.footer__container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer__contacts {
+    padding-top: 16px;
+    max-width: 279px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+}
+
+.footer__title {
+    color: $color-light;
+}
+
+.footer__email, .footer__number, .footer__location-1, .footer__location-2 {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.footer__location-1 {
+    margin-top: -16px;
+}
+
+.footer__location-2 {
+    margin-top: -22px;
+}
+
+.footer__subtitle {
+    text-align: center;
+    color: $color-primary;
+}
+
+.footer__address {
+    padding-top: 16px;
+    max-width: 302px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+}
+
+.footer__img-container {
+    background-image: url("../../src/img/footer/footer-puppy.png");
+    width: 300px;
+    height: 310px;
+    @extend %img-container;
+}
+
+.ico--email {
+    background-image: url("../../src/img/footer/icon-email.svg");
+    width: 40px;
+    height: 32px;
+    padding-right: 20px;
+}
+
+.ico--phone {
+    background-image: url("../../src/img/footer/icon-phone.svg");
+    width: 40px;
+    height: 32px;
+    padding-right: 20px;
+}
+
+.ico--location-1 {
+    background-image: url("../../src/img/footer/icon-marker.svg");
+    width: 45px;
+    height: 67px;
+    background-position: center;
+}
+
+.ico--location-2 {
+    background-image: url("../../src/img/footer/icon-marker.svg");
+    width: 26px;
+    height: 40px;
+    margin-right: 15px;
+}

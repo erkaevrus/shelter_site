@@ -12,27 +12,24 @@
     background-image: url("../../src/img/about/about.png");
     width: 300px;
     height: 408px;
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
+    @extend %img-container;
 }
 
 .about__content {
     max-width:430px;
     padding-left: 120px;
-
 }
 
 .about__title {
     max-width: 370px;
     padding-top: 14px;
     padding-bottom: 25px;
+    color: $color-dark-l;
 }
 
 .about__text {
-    font-family: 'Arial', sans-serif;
-    font-size: 1.5rem;
-    line-height: 2.4rem;
+    @extend %font-add;
+    color: $color-dark-xl;
 }
 
 .about__text + .about__text {
