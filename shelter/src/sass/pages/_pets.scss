@@ -1,0 +1,32 @@
+.logo__title {
+    color: $color-dark-l;
+}
+
+.logo__subtitle {
+    color: $color-text;
+}
+
+.header {
+    background-color: $color-light;
+    padding: 30px 0;
+    position: sticky;
+    top:0;
+}
+
+.navigation {
+    color: $color-dark-l;
+}
+
+.navigation__link {
+    &:hover {
+        color: $color-text;
+    }
+    &--underlined {
+        cursor: default;
+        padding-bottom: 5px;
+        border-bottom: 3px solid $color-primary;
+        &:hover {
+            color: $color-text;
+        }
+    }
+}

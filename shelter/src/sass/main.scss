@@ -1,6 +1,7 @@
 @import "../../node_modules/normalize-scss/sass/normalize";
 @include normalize();
 
+
 // ---ABSTRACT---
 @import "abstract/constants";
 @import "abstract/mixins";
@@ -19,9 +20,14 @@
 
 
 // ---COMPONENTS---
+@import "components/navigation";
 @import "components/about";
 @import "components/donation";
 @import "components/friends";
 @import "components/help";
 @import "components/not-only";
 @import "components/about";
+
+
+// ---PAGES---
+@import "pages/main";

@@ -1,7 +1,3 @@
-.common-background {
-    background-image: url("../img/not-only/background.png"), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%);
-}
-
 .header {
     padding: 60px 0;
 }
@@ -11,37 +7,8 @@
     justify-content: space-between;
 }
 
-.logo__title {
-    color: $color-primary;
-}
-
 .logo__subtitle {
     padding-top: 10px;
     @extend %font-add;
     @include font($size: 1.3rem, $height: 1.5rem, $spacing: 0.14rem);
-    color: $color-light;
-}
-
-.navigation {
-    display: flex;
-    @extend %font-add;
-    color: $color-background-additional;
-}
-
-.navigation__item {
-    list-style: none;
-    padding: 0 17.5px;
-    &:last-child {
-        padding-right: 0;
-    }
-}
-
-.navigation__link {
-    &:hover {
-        border-bottom: 3px solid $color-primary;
-    }
-    &--underlined {
-        padding-bottom: 5px;
-        border-bottom: 3px solid $color-primary;
-    }
 }

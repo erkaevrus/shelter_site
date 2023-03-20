@@ -1,11 +1,7 @@
 .button {
     border-radius: 100px;
-    font-family: 'Georgia', serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 1.7rem;
-    line-height: 2.2rem;
-    letter-spacing: 0.06rem;
+    @extend %font-primary;
+    @include font($size: 1.7rem, $height: 2.2rem);
     cursor: pointer;
     @extend %transition;
     &--colored {
@@ -21,10 +17,6 @@
         background-color: inherit;
         border: 2px solid $color-primary;
         color: $color-text;
-        &:hover {
-            background-color: $color-hovered;
-            border-color: $color-hovered;
-        }
     }
 }
 
@@ -32,18 +24,40 @@
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    border: 2px solid $color-primary;
-    background: $color-background-main;
     display: flex;
     justify-content: center;
     align-items: center;
     @extend %transition;
-    cursor: pointer;
+    background-color: inherit;
+    border: 2px solid $color-primary;
+    color: $color-text;
     &:hover {
+        cursor: pointer;
         background-color: $color-hovered;
         border-color: $color-hovered;
     }
+    &--colored {
+        background-color: $color-primary;
+        color: $color-text;
+        border: 1px solid $color-primary;
+        &:hover {
+            cursor: pointer;
+            background-color: $color-hovered;
+            border-color: $color-hovered;;
+        }
+    }
+    &--inactive {
+        border: 2px solid $color-additional;
+        color: $color-additional;
+        &:hover {
+            cursor: default;
+            background-color: inherit;
+            border-color: $color-additional;
+        }
+    }
 }
+
+
 
 .btn-round--arrow-left {
     background: url("../../src/img/icons/arrow-left.svg");

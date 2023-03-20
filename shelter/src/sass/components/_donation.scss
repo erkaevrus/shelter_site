@@ -35,6 +35,7 @@
 }
 
 .card-container {
+    @extend %transition;
     display: flex;
     justify-content: start;
     align-items: center;
@@ -43,6 +44,9 @@
     background-color: $color-primary;
     border-radius: 9px;
     color: $color-dark-l;
+    &:hover {
+        background-color: $color-hovered;
+    }
 }
 
 .card-container__ico {

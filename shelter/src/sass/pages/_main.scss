@@ -1,0 +1,26 @@
+.common-background {
+    background-image: url("../img/not-only/background.png"), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%);
+}
+
+.logo__title {
+    color: $color-primary;
+}
+
+.logo__subtitle {
+    color: $color-light;
+}
+
+.navigation {
+    color: $color-additional;
+}
+
+.navigation__link {
+    &:hover {
+        color: $color-background-additional;
+    }
+    &--underlined {
+        color: $color-background-additional;
+        padding-bottom: 5px;
+        border-bottom: 3px solid $color-primary;
+    }
+}

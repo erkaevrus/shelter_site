@@ -6,9 +6,12 @@
 .not-only__content {
     padding: 163px 42px 0 0;
     max-width: 460px;
-    &>button {
-        width: 207px;
-        height: 52px;
+    &>.button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 205px;
+        height: 50px;
     }
 }
 

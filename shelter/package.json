@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "style": "sass --watch src/sass/style.scss src/sass/style.css",
+    "style": "sass --watch src/sass/main.scss:src/sass/main.css src/sass/pets.scss:src/sass/pets.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Erkaev Rustam",

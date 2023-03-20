@@ -1,0 +1,30 @@
+@import "../../node_modules/normalize-scss/sass/normalize";
+@include normalize();
+
+
+// ---ABSTRACT---
+@import "abstract/constants";
+@import "abstract/mixins";
+@import "abstract/placeholders";
+
+
+// ---BASE---
+@import "base/base";
+@import "base/buttons";
+
+
+// ---LAYOUTS---
+@import "layouts/container";
+@import "layouts/header";
+@import "layouts/footer";
+
+
+// ---COMPONENTS---
+@import "components/navigation";
+@import "components/our-friends";
+@import "components/_friends";
+@import "components/pagination";
+
+
+// ---PAGES---
+@import "pages/pets";
