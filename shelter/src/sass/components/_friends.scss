@@ -1,6 +1,10 @@
 .friends {
     background-color: $color-background-main;
     padding: 80px 0 100px;
+    @media (max-width: 620px) {
+        padding-top: 46px;
+        padding-bottom: 46px;
+    }
 }
 
 .friends__container {
@@ -16,6 +20,8 @@
         width: 261px;
         height: 52px;
     }
+
+
 }
 
 .friends__title {
@@ -30,11 +36,35 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @media (max-width: 400px) {
+        flex-wrap: wrap;
+        justify-content: center;
+        >:nth-child(1) {
+            order: 1;
+            margin-right: 80px;
+        }
+        >:nth-child(3) {
+            order: 2;
+        }
+
+    }
 }
 
 .slider__container {
+    display:flex;
+    justify-content: space-between;
     overflow: hidden;
     max-width: 990px;
+    @media (max-width: 1200px) {
+        max-width: 630px;
+        align-items: center;
+    }
+    @media (max-width: 800px) {
+        max-width: 570px;
+    }
+    @media (max-width: 760px) {
+        max-width: 270px;
+    }
 }
 
 .slider__line {
@@ -42,6 +72,10 @@
     @extend %transition;
     >.slider__item {
         margin-right: 90px;
+        @media (max-width: 800px) {
+            margin-right: 40px;
+        }
+
     }
 }
 
@@ -66,6 +100,10 @@
         border-color: $color-hovered;
     }
     @extend %transition;
+    @media (max-width: 400px) {
+        margin-bottom: 20px;
+    }
+
 }
 
 .slider__img {

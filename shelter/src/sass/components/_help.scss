@@ -2,6 +2,9 @@
     background-color: $color-light;
     padding-top: 80px;
     padding-bottom: 100px;
+    @media (max-width: 620px) {
+        padding: 42px 0;
+    }
 }
 
 .help__container {
@@ -17,6 +20,9 @@
     padding-bottom: 60px;
     white-space: pre;
     color: $color-dark-l;
+    @media (max-width: 620px) {
+        padding-bottom: 45px;
+    }
 }
 
 .help__content {
@@ -25,6 +31,22 @@
     justify-content: center;
     gap: 55px 119px;
     max-width: 1026px;
+    @media (max-width: 1120px) {
+        gap: 55px 60px;
+        max-width: 630px;
+        >.help__item {
+            width: 170px;
+        }
+    }
+    @media (max-width: 620px) {
+        gap: 30px 30px;
+        >.help__item {
+            width: 130px;
+        }
+    }
+    @media (max-width: 350px) {
+        justify-content: start;
+    }
 }
 
 .help__item {
@@ -33,7 +55,12 @@
     align-items: center;
     justify-content: center;
     &>.ico {
-        padding-bottom: 30px;
+        margin-bottom: 30px;
+    }
+    @media (max-width: 620px) {
+        &>.ico {
+            margin-bottom: 20px;
+        }
     }
 }
 
@@ -41,61 +68,106 @@
     background-image: url("../../src/img/help/pet-food.svg");
     width: 60px;
     height: 60px;
+    @extend %img-container;
+    @media (max-width: 620px) {
+        width: 50px;
+        height: 50px;
+    }
 }
 
 .ico--transportation {
     background-image: url("../../src/img/help/transportation.svg");
     width: 60px;
     height: 60px;
+    @extend %img-container;
+    @media (max-width: 620px) {
+        width: 50px;
+        height: 50px;
+    }
 }
 
 .ico--toys {
     background-image: url("../../src/img/help/toys.svg");
     width: 60px;
     height: 60px;
+    @extend %img-container;
+    @media (max-width: 620px) {
+        width: 50px;
+        height: 50px;
+    }
 }
 
 .ico--bowls-and-cups {
     background-image: url("../../src/img/help/bowls-and-cups.svg");
     width: 60px;
     height: 60px;
+    @extend %img-container;
+    @media (max-width: 620px) {
+        width: 50px;
+        height: 50px;
+    }
 }
 
 .ico--shampoos {
     background-image: url("../../src/img/help/shampoos.svg");
     width: 60px;
     height: 60px;
+    @extend %img-container;
+    @extend %img-container;
+    @media (max-width: 620px) {
+        width: 50px;
+        height: 50px;
+    }
 }
 
 .ico--vitamins {
     background-image: url("../../src/img/help/vitamins.svg");
     width: 60px;
     height: 60px;
+    @extend %img-container;
+    @media (max-width: 620px) {
+        width: 50px;
+        height: 50px;
+    }
 }
 
 .ico--medicines {
     background-image: url("../../src/img/help/medicines.svg");
     width: 60px;
     height: 60px;
+    @extend %img-container;
+    @media (max-width: 620px) {
+        width: 50px;
+        height: 50px;
+    }
 }
 
 .ico--collars-leashes {
     background-image: url("../../src/img/help/collars-leashes.svg");
     width: 60px;
     height: 60px;
+    @extend %img-container;
+    @media (max-width: 620px) {
+        width: 50px;
+        height: 50px;
+    }
 }
 
 .ico--sleeping-area {
     background-image: url("../../src/img/help/sleeping-area.svg");
     width: 60px;
     height: 60px;
+    @extend %img-container;
+    @media (max-width: 620px) {
+        width: 50px;
+        height: 50px;
+    }
 }
 
-.help__content {
-    display: flex;
-    flex-wrap: wrap;
-}
 
 .help__text {
     color: $color-dark-l;
+    @media (max-width: 620px) {
+        @include font($size: 1.5rem, $height: 1.7rem)
+    }
 }

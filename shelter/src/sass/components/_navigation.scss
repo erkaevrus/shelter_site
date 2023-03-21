@@ -1,6 +1,9 @@
 .navigation {
     display: flex;
     @extend %font-add;
+    @media (max-width: 750px) {
+        display: none;
+    }
 }
 
 .navigation__item {

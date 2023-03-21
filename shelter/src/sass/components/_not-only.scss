@@ -1,10 +1,14 @@
 .not-only__container {
     display: flex;
     justify-content: space-between;
+    @media (max-width: 1100px) {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 .not-only__content {
-    padding: 163px 42px 0 0;
     max-width: 460px;
     &>.button {
         display: flex;
@@ -12,6 +16,19 @@
         align-items: center;
         width: 205px;
         height: 50px;
+        @media (max-width: 1100px) {
+            align-self: center;
+        }
+    }
+    padding: 165px 0px 0px 0px;
+    @media (max-width: 1100px) {
+        padding: 0px 70px 100px 70px;
+        display: flex;
+        flex-direction: column;
+    }
+    @media (max-width: 620px) {
+        padding: 0 0 105px 0;
+        align-items: center;
     }
 }
 
@@ -19,17 +36,39 @@
     max-width: 310px;
     padding-bottom: 42px;
     color: $color-light;
+    @media (max-width: 620px) {
+        max-width: 250px;
+        text-align: center;
+    }
+
 }
 
 .not-only__text {
     @extend %font-add;
     padding-bottom: 42px;
     color: $color-additional;
+    @media (max-width: 620px) {
+        max-width: 300px;
+        max-height: 96px;
+        text-align: center;
+    }
 }
 
 .not-only__img-container {
     background-image: url("../../src/img/not-only/not-only.png");
     width: 698px;
     height: 728px;
-    @extend %img-container;
+    // @extend %img-container;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    @media (max-width: 1200px) {
+        width: 569px;
+        height: 593px;
+        align-self: flex-end;
+    }
+    @media (max-width: 620px) {
+        width: 260px;
+        height: 272px;
+    }
 }
