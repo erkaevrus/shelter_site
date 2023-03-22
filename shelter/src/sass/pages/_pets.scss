@@ -9,8 +9,6 @@
 .header {
     background-color: $color-light;
     padding: 30px 0;
-    position: sticky;
-    top:0;
 }
 
 .navigation {
@@ -29,4 +27,16 @@
             color: $color-text;
         }
     }
+}
+
+.hamburger {
+    &:before {
+        background-color: $color-dark;
+    }
+    &:after {
+        background-color: $color-dark;
+    }
+}
+.hamburger__line {
+    background-color: $color-dark;
 }
