@@ -22,10 +22,10 @@
     width: 505px;
     height: 261px;
     @extend %img-container;
-    @media (max-width: 550px) {
+    @media (max-width: 620px) {
         width: 260px;
         height: 135px;
-        margin-top: -10px;
+        margin-top: -8px;
     }
 }
 
@@ -49,7 +49,7 @@
     text-align: start;
     padding-bottom: 20px;
     color: $color-dark-l;
-    @media (max-width: 550px) {
+    @media (max-width: 620px) {
         text-align: center;
         max-width: 220px;
     }
@@ -76,7 +76,7 @@
     &:hover {
         background-color: $color-hovered;
     }
-    @media (max-width: 550px) {
+    @media (max-width: 620px) {
         width: 280px;
     }
 }

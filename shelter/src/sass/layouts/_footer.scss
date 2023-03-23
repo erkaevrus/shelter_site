@@ -57,7 +57,11 @@
 
 .footer__subtitle {
     text-align: center;
+    @include font($size: 2.0rem, $height: 2.3rem);
     color: $color-primary;
+    &:hover {
+        color: $color-hovered;
+    }
 }
 
 .footer__address {

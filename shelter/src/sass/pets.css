@@ -501,6 +501,15 @@ h4 {
   line-height: 2.3rem;
   letter-spacing: 0.06em;
 }
+@media (max-width: 620px) {
+  h4 {
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.7rem;
+    letter-spacing: 0.06em;
+  }
+}
 
 h5 {
   font-size: 1.5rem;
@@ -754,7 +763,15 @@ h5 {
 
 .footer__subtitle {
   text-align: center;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2.3rem;
+  letter-spacing: 0.06em;
   color: #F1CDB3;
+}
+.footer__subtitle:hover {
+  color: #FDDCC4;
 }
 
 .footer__address {
