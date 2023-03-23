@@ -21,11 +21,9 @@
     }
     &--underlined {
         cursor: default;
+        color: $color-text;
         padding-bottom: 5px;
         border-bottom: 3px solid $color-primary;
-        &:hover {
-            color: $color-text;
-        }
     }
 }
 
@@ -37,6 +35,7 @@
         background-color: $color-dark;
     }
 }
+
 .hamburger__line {
     background-color: $color-dark;
 }

@@ -1018,11 +1018,9 @@ h5 {
 }
 .navigation__link--underlined {
   cursor: default;
+  color: #292929;
   padding-bottom: 5px;
   border-bottom: 3px solid #F1CDB3;
-}
-.navigation__link--underlined:hover {
-  color: #292929;
 }
 
 .hamburger:before {

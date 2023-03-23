@@ -50,7 +50,6 @@
     }
 }
 
-
 .help__item {
     display: flex;
     flex-direction: column;
@@ -65,14 +64,6 @@
         }
     }
 }
-
-
-// .help__item:last-child {
-//     @media (max-width: 350px) {
-//         align-self: flex-start;
-//     }
-// }
-
 
 .ico--food {
     background-image: url("../../src/img/help/pet-food.svg");
@@ -123,7 +114,6 @@
     width: 60px;
     height: 60px;
     @extend %img-container;
-    @extend %img-container;
     @media (max-width: 620px) {
         width: 50px;
         height: 50px;
@@ -173,7 +163,6 @@
         height: 50px;
     }
 }
-
 
 .help__text {
     color: $color-dark-l;
