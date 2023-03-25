@@ -9,6 +9,8 @@
 
 .hamburger {
     display: none;
+    z-index: 5;
+    cursor: pointer;
     width: 30px;
     height: 22px;
     position: relative;
