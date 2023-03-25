@@ -685,7 +685,7 @@ h5 {
   letter-spacing: 0.14rem;
 }
 
-@media (max-width: 750px) {
+@media (max-width: 767px) {
   .header__logo-line {
     width: 100%;
     display: flex;
@@ -831,7 +831,7 @@ h5 {
 .navigation {
   display: flex;
 }
-@media (max-width: 750px) {
+@media (max-width: 767px) {
   .navigation {
     display: none;
   }
@@ -1586,7 +1586,7 @@ h5 {
   bottom: 0;
   left: 0;
 }
-@media (max-width: 750px) {
+@media (max-width: 767px) {
   .hamburger {
     display: inline-block;
   }
