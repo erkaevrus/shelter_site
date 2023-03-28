@@ -29,13 +29,15 @@
 }
 
 .about__content {
-    max-width:430px;
+    max-width: calc(430/1200*100%);
     padding-left: 120px;
     @media (max-width: 1000px) {
+        max-width: calc(430/708*100%);
         padding-left: 0;
         padding-bottom: 80px;
     }
     @media (max-width: 620px) {
+        max-width: calc(430/320*100%);
         padding-bottom: 40px;
         display: flex;
         flex-direction: column;
@@ -69,4 +71,3 @@
 .about__text + .about__text {
     padding-top: 24px;
 }
-

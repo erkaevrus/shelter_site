@@ -886,17 +886,19 @@ h5 {
 }
 
 .about__content {
-  max-width: 430px;
+  max-width: 35.8333333333%;
   padding-left: 120px;
 }
 @media (max-width: 1000px) {
   .about__content {
+    max-width: 60.7344632768%;
     padding-left: 0;
     padding-bottom: 80px;
   }
 }
 @media (max-width: 620px) {
   .about__content {
+    max-width: 134.375%;
     padding-bottom: 40px;
     display: flex;
     flex-direction: column;
@@ -973,17 +975,19 @@ h5 {
 }
 
 .donation__content {
-  max-width: 380px;
+  max-width: 31.6666666667%;
   padding-left: 30px;
 }
 @media (max-width: 1100px) {
   .donation__content {
+    max-width: 53.6723163842%;
     padding-bottom: 50px;
     padding-left: 0;
   }
 }
-@media (max-width: 550px) {
+@media (max-width: 450px) {
   .donation__content {
+    max-width: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -992,7 +996,7 @@ h5 {
 }
 
 .donation__title {
-  max-width: 300px;
+  width: 300px;
   text-align: start;
   padding-bottom: 20px;
   color: #545454;
@@ -1403,7 +1407,7 @@ h5 {
 }
 
 .not-only__content {
-  max-width: 460px;
+  max-width: 38.3333333333%;
   padding: 165px 0px 0px 0px;
 }
 .not-only__content > .button {
@@ -1420,13 +1424,20 @@ h5 {
 }
 @media (max-width: 1100px) {
   .not-only__content {
+    max-width: 100%;
     padding: 0px 70px 100px 70px;
     display: flex;
     flex-direction: column;
   }
 }
-@media (max-width: 620px) {
+@media (max-width: 768px) {
   .not-only__content {
+    max-width: 64.9717514124%;
+  }
+}
+@media (max-width: 320px) {
+  .not-only__content {
+    max-width: 300px;
     padding: 0 0 105px 0;
     align-items: center;
   }
@@ -1437,7 +1448,7 @@ h5 {
   padding-bottom: 42px;
   color: #FFFFFF;
 }
-@media (max-width: 620px) {
+@media (max-width: 320px) {
   .not-only__title {
     max-width: 250px;
     text-align: center;
@@ -1448,7 +1459,7 @@ h5 {
   padding-bottom: 42px;
   color: #CDCDCD;
 }
-@media (max-width: 620px) {
+@media (max-width: 320px) {
   .not-only__text {
     max-width: 300px;
     max-height: 96px;
@@ -1513,17 +1524,19 @@ h5 {
 }
 
 .about__content {
-  max-width: 430px;
+  max-width: 35.8333333333%;
   padding-left: 120px;
 }
 @media (max-width: 1000px) {
   .about__content {
+    max-width: 60.7344632768%;
     padding-left: 0;
     padding-bottom: 80px;
   }
 }
 @media (max-width: 620px) {
   .about__content {
+    max-width: 134.375%;
     padding-bottom: 40px;
     display: flex;
     flex-direction: column;
