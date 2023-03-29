@@ -2,7 +2,23 @@
     display: flex;
     @extend %font-add;
     @media (max-width: 767px) {
-        display: none;
+        position: fixed;
+        z-index: 4;
+        transition: right 0.6s ease;
+        top: 0;
+        right: -150%;
+        bottom: 0;
+        width: 320px;
+        background-color: $color-text;
+        margin-top: 0;
+        margin-bottom: 0;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 250px;
+        @include font($size: 3.2rem, $height: 5.2rem, $spacing: 0);
+        &--open {
+            right: 0;
+        }
     }
 }
 
@@ -11,6 +27,12 @@
     padding: 0 17.5px;
     &:last-child {
         padding-right: 0;
+    }
+    @media (max-width: 767px) {
+        padding-bottom: 40px;
+        &:last-child {
+            padding-right: 17.5px;
+        }
     }
 }
 
