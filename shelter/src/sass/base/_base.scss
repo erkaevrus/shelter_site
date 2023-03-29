@@ -3,10 +3,13 @@ html {
     scroll-behavior: smooth;
 }
 
-body {
+.body {
     @extend %font-primary;
     font-size: 1.5rem;
     line-height: 2.4rem;
+    &--lock {
+        overflow: hidden;
+    }
 }
 
 a {

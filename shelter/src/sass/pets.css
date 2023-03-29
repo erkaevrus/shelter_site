@@ -414,11 +414,11 @@ template {
   display: none;
 }
 
-.slider__item, .btn-round, .button {
+.hamburger, .slider__item, .overlay, .btn-round, .button {
   transition: all 0.3s ease-out;
 }
 
-.button, body {
+.button, .body {
   font-family: "Georgia", serif;
 }
 
@@ -437,9 +437,12 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
+.body {
   font-size: 1.5rem;
   line-height: 2.4rem;
+}
+.body--lock {
+  overflow: hidden;
 }
 
 a {
@@ -696,6 +699,19 @@ h5 {
   }
 }
 
+.overlay {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(41, 41, 41, 0.6);
+}
+.overlay--active {
+  opacity: 1;
+}
+
 .footer {
   background-image: url("../img/not-only/background.png"), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%);
   padding-top: 40px;
@@ -834,7 +850,27 @@ h5 {
 }
 @media (max-width: 767px) {
   .navigation {
-    display: none;
+    position: fixed;
+    z-index: 4;
+    transition: right 0.6s ease;
+    top: 0;
+    right: -150%;
+    bottom: 0;
+    width: 320px;
+    background-color: #292929;
+    margin-top: 0;
+    margin-bottom: 0;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 250px;
+    font-size: 3.2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 5.2rem;
+    letter-spacing: 0;
+  }
+  .navigation--open {
+    right: 0;
   }
 }
 
@@ -844,6 +880,14 @@ h5 {
 }
 .navigation__item:last-child {
   padding-right: 0;
+}
+@media (max-width: 767px) {
+  .navigation__item {
+    padding-bottom: 40px;
+  }
+  .navigation__item:last-child {
+    padding-right: 17.5px;
+  }
 }
 
 .navigation__link {
@@ -1000,6 +1044,9 @@ h5 {
 @media (max-width: 767px) {
   .hamburger {
     display: inline-block;
+  }
+  .hamburger--open {
+    transform: rotate(-90deg);
   }
 }
 
