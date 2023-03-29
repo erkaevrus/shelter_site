@@ -14,7 +14,10 @@ const toggleMenu = function () {
     overlay.classList.toggle('overlay--active')
  }
 
-hamburger.addEventListener('click', toggleMenu)
+hamburger.addEventListener('click', function(event) {
+    event.stopPropagation()
+    toggleMenu()
+})
 
 // ---close menu by click on each link---
 const navigationLinks = document.querySelectorAll('.navigation__link')
@@ -27,13 +30,22 @@ const onMenuLinkClick = function () {
  }
 
 navigationLinks.forEach(item => {
-    item.addEventListener('click', onMenuLinkClick)
+    item.addEventListener('click', function (event) {
+        event.stopPropagation()
+        onMenuLinkClick()
+    })
 })
 
 
 // ---close menu by click on free area---
-// document.addEventListener('click', function() {
-//     if (hamburger.classList.contains('hamburger--open')) {
-//         toggleMenu()
-//     }
-// })
+document.addEventListener('click', function(event) {
+    if (event.target.classList.contains('navigation')) {
+        return
+    }
+    if (event.target.classList.contains('navigation__item')) {
+        return
+    }
+    if (hamburger.classList.contains('hamburger--open')) {
+        toggleMenu()
+    }
+})
