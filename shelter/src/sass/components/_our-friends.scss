@@ -55,11 +55,10 @@
     @media (max-width: 620px) {
         gap: 42px;
     }
-
-
 }
 
 .our-friends__title {
+    color: $color-dark-l;
     max-width: 400px;
     text-align: center;
     white-space: pre-line;
