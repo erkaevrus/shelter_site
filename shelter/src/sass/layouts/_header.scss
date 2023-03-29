@@ -29,14 +29,15 @@
 
 .overlay {
     @extend %transition;
+    z-index: 1;
     opacity: 0;
-    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background: rgba(41, 41, 41, 0.6);
     &--active {
+        position: absolute;
         opacity: 1;
     }
 }
