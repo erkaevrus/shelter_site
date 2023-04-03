@@ -414,7 +414,7 @@ template {
   display: none;
 }
 
-.hamburger, .slider__item, .slider__line, .card-container, .overlay, .btn-round, .button {
+.hamburger, .slider__item, .card-container, .overlay, .btn-round, .button {
   transition: all 0.3s ease-out;
 }
 
@@ -1181,13 +1181,13 @@ h5 {
 }
 @media (max-width: 1200px) {
   .slider__container {
-    max-width: 630px;
+    max-width: 580px;
     align-items: center;
   }
 }
 @media (max-width: 800px) {
   .slider__container {
-    max-width: 570px;
+    max-width: 580px;
   }
 }
 @media (max-width: 760px) {
@@ -1198,11 +1198,14 @@ h5 {
 
 .slider__line {
   display: flex;
+  position: relative;
+  left: 0;
+  transition: all 1s ease-out;
 }
 .slider__line > .slider__item {
   margin-right: 90px;
 }
-@media (max-width: 800px) {
+@media (max-width: 1200px) {
   .slider__line > .slider__item {
     margin-right: 40px;
   }
@@ -1249,6 +1252,10 @@ h5 {
   letter-spacing: 0.06em;
   color: #545454;
   padding-bottom: 30px;
+}
+
+.no-transition {
+  transition: none !important;
 }
 
 .help {
