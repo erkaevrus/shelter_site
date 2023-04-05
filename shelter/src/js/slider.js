@@ -1,64 +1,34 @@
-import cardsInfo from "../data/pets.js";
+import cardsInfo from "../data/pets.js"; // импорт массива объектов с карточками
 
+
+/* ---ГЛОБАЛЬНЫЕ ПЕРЕМЕННЫЕ И КОНСТАНТЫ--- */
 
 const sliderLine = document.querySelector('.slider__line')
 
 let offset = 0 //смещение от левого края
-let sliderWidth //ширина видимого окна слайдера
-let sliderLineWidth //ширина видимого окна слайдера + отступы между карточек
+let sliderWidth = 1080 //ширина окна слайдера при текущей ширине экрана
 let cardIndexes = [] //псевдослучайный набор индексов карточек
-let numberOfCard //количество отображаемых карточек
+let numberOfCard = 3 //количество карточек на странице
 let lineCard = [] //сгенерированный ряд карточек
 
 
-//вычисление ширины видимого окна слайдера
-const getSliderWidth = function () {
-    const sliderContainer = document.querySelector('.slider__container')
-    sliderWidth = Number((window.getComputedStyle(sliderContainer, null).getPropertyValue("max-width")).slice(0,3))
-}
-getSliderWidth()
-
-// window.addEventListener('resize', function() {
-//     getSliderWidth()
-// })
 
 
-//вычисление ширины окна + отступы
-const getSliderLineWidth = function () {
-    switch(sliderWidth) {
-        case 990:
-        sliderLineWidth = 1080
-        numberOfCard = 3
-        break
+/* ---СОЗДАНИЕ ИНДЕКСОВ--- */
 
-        case 580:
-        sliderLineWidth = 620
-        numberOfCard = 2
-        break
-
-        case 270:
-        sliderLineWidth = 310
-        numberOfCard = 1
-        break
-    }
-}
-getSliderLineWidth()
-
-
-
-//генерация рандомного числа от Min до Max
+//Генерация рандомного числа от Min до Max
 function getRandomNum(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 
-//генерация случайных индексов от 0 до maxIndex в списке объектов
-const getCardIndexes = function () {
+//Генерация случайных индексов
+function getCardIndexes() {
     let temp = [...cardIndexes]
     cardIndexes = []
-    const maxIndexOfCollection = cardsInfo.length - 1
+    const endIndex = cardsInfo.length - 1
     while (cardIndexes.length < numberOfCard) {
-        let index = getRandomNum(0, maxIndexOfCollection)
+        let index = getRandomNum(0, endIndex)
         if (!cardIndexes.includes(index) && !temp.includes(index)) {
             cardIndexes.push(index)
         }
@@ -67,8 +37,12 @@ const getCardIndexes = function () {
 }
 
 
-//генерация карточек
-const createCards = function () {
+
+
+/* ---РАБОТА С КАРТОЧКАМИ--- */
+
+//Генерация карточек
+function createCards() {
     lineCard = []
     getCardIndexes()
     cardsInfo.forEach((item, index) => {
@@ -88,14 +62,20 @@ const createCards = function () {
 
 
 //Добавление карточек в конец
-const appendCard = function () {
+function appendCard() {
     createCards()
     lineCard.forEach(item => {document.querySelector('.slider__line').appendChild(item)})
 }
 
+//Добавление карточек в начало
+function prependCard() {
+    createCards()
+    lineCard.forEach(item => {document.querySelector('.slider__line').prepend(item)})
+}
+
 
 //Удаление карточек из начала
-const deleteCardsFromStart = function () {
+function deleteCardsFromStart() {
     btnNextSlides.removeEventListener('click', nextSlides)
     setTimeout(function () {
         let SliderItems = document.querySelectorAll('.slider__item')
@@ -105,43 +85,15 @@ const deleteCardsFromStart = function () {
             }
         }
         sliderLine.classList.add('no-transition')
-        sliderLine.style.left = -sliderLineWidth + 'px'
-        offset = sliderLineWidth
+        sliderLine.style.left = -sliderWidth + 'px'
+        offset = sliderWidth
         btnNextSlides.addEventListener('click', nextSlides)
     }, 1000)
 }
 
 
-//Пролистывание вправо
-const btnNextSlides = document.querySelector('.slider__next')
-
-const nextSlides = function () {
-    sliderLine.classList.remove('no-transition')
-    let leftProp = Number((sliderLine.style.left).slice(0, -2))
-
-    if (leftProp === -sliderLineWidth || document.querySelectorAll('.slider__item').length === numberOfCard) {
-        appendCard()
-    }
-
-    if (document.querySelectorAll('.slider__item').length > numberOfCard * 2) {
-        deleteCardsFromStart()
-    }
-    offset += sliderLineWidth
-    sliderLine.style.left = -offset + 'px'
-}
-
-btnNextSlides.addEventListener('click', nextSlides)
-
-
-//Добавление карточек в начало
-const prependCard = function () {
-    createCards()
-    lineCard.forEach(item => {document.querySelector('.slider__line').prepend(item)})
-}
-
-
 //Удаление карточек из конца
-const deleteCardsFromEnd = function () {
+function deleteCardsFromEnd() {
     setTimeout(function () {
         btnNextSlides.removeEventListener('click', nextSlides)
         let SliderItems = document.querySelectorAll('.slider__item')
@@ -155,25 +107,58 @@ const deleteCardsFromEnd = function () {
 }
 
 
+//Очистка окна слайдера
+function clearSlider() {
+    let SliderItems = document.querySelectorAll('.slider__item')
+    for (let i = 0; i < SliderItems.length; i++) {
+            SliderItems[i].remove()
+    }
+}
+
+
+
+/* ---ПЕРЕКЛЮЧЕНИЕ СЛАЙДЕРА--- */
+
+//Пролистывание вправо
+const btnNextSlides = document.querySelector('.slider__next')
+
+function nextSlides() {
+    sliderLine.classList.remove('no-transition')
+    let leftProp = Number((sliderLine.style.left).slice(0, -2))
+
+    if (leftProp === -sliderWidth || document.querySelectorAll('.slider__item').length === numberOfCard) {
+        appendCard()
+    }
+
+    if (document.querySelectorAll('.slider__item').length > numberOfCard * 2) {
+        deleteCardsFromStart()
+    }
+    offset += sliderWidth
+    sliderLine.style.left = -offset + 'px'
+}
+
+btnNextSlides.addEventListener('click', nextSlides)
+
+
 //Пролистывание влево
 const btnPrevSlides = document.querySelector('.slider__prev')
 
-const prevSlides = function () {
+function prevSlides() {
     sliderLine.classList.remove('no-transition')
     let leftProp = Number((sliderLine.style.left).slice(0, -2))
 
     if (leftProp === 0 || document.querySelectorAll('.slider__item').length === numberOfCard) {
         prependCard()
         sliderLine.classList.add('no-transition')
-        sliderLine.style.left = -sliderLineWidth + 'px'
-        offset = sliderLineWidth
+        sliderLine.style.left = -sliderWidth + 'px'
+        offset = sliderWidth
     }
 
     if (document.querySelectorAll('.slider__item').length > numberOfCard * 2) {
         deleteCardsFromEnd()
     }
 
-    offset -= sliderLineWidth;
+    offset -= sliderWidth;
     setTimeout(function() {
         sliderLine.classList.remove('no-transition')
         sliderLine.style.left = -offset + 'px'
@@ -183,23 +168,55 @@ const prevSlides = function () {
 btnPrevSlides.addEventListener('click', prevSlides)
 
 
-//загрузка карточек при формировании дом дерева
-window.addEventListener('DOMContentLoaded', appendCard)
+// //загрузка карточек при формировании дом дерева
+// window.addEventListener('DOMContentLoaded', appendCard)
 
 
-//Очистка окна слайдера
-const clearSlider = function () {
-    let SliderItems = document.querySelectorAll('.slider__item')
-    for (let i = 0; i < SliderItems.length; i++) {
-            SliderItems[i].remove()
-    }
-}
 
-// let VieportWidth = 0
+// // /* ---ПЕРЕСТРОЕНИЕ СТРАНИЦЫ--- */
 
-// const getViewportWidth = function () {
-//     VieportWidth = window.screen.width
-//     console.log(VieportWidth)
+// //Перестроение карточек при переходе с Таблетки на Десктоп
+// const mediaToDesctopFromTablet = window.matchMedia('(min-width: 1200px)')
+
+// function rebuildPageToDesctop(event) {
+//     if (event.matches) {
+//         clearSlider()
+//         sliderWidth = 1080
+//         numberOfCard = 3
+//         appendCard()
+//     }
 // }
 
-// document.addEventListener('resize', getViewportWidth)
+// mediaToDesctopFromTablet.addListener(rebuildPageToDesctop)
+// rebuildPageToDesctop(mediaToDesctopFromTablet)
+
+
+// //Перестроение карточек при переходе с Таблетки на Мобилку
+// const mediaToMobileFromTablet = window.matchMedia('(max-width: 705px)')
+
+// function rebuildPageToMobile(event) {
+//     if (event.matches) {
+//         deleteCardsFromPage()
+//         cardsOnPage = 3
+//         backToFirstPage()
+//         displayPage()
+//     }
+// }
+// mediaToMobileFromTablet.addListener(rebuildPageToMobile)
+// rebuildPageToMobile(mediaToMobileFromTablet)
+
+
+// //Перестроение карточек при переходе на Таблетку
+// const mediaToTablet = window.matchMedia('(min-width: 705px) and (max-width: 1275px)')
+
+// function rebuildPageToTablet(event) {
+//     if (event.matches) {
+//         deleteCardsFromPage()
+//         cardsOnPage = 6
+//         backToFirstPage()
+//         displayPage()
+//         console.log(1)
+//     }
+// }
+// mediaToTablet.addListener(rebuildPageToTablet)
+// rebuildPageToTablet(mediaToTablet)
