@@ -62,6 +62,15 @@ function displayPage() {
     lineCard.forEach((item) => {
         let card = document.createElement('div')
         card.classList.add('slider__item')
+            card.dataset.name = item.name
+            card.dataset.img = item.img
+            card.dataset.type = item.type
+            card.dataset.breed = item.breed
+            card.dataset.description = item.description
+            card.dataset.age = item.age
+            card.dataset.inoculations = item.inoculations
+            card.dataset.diseases = item.diseases
+            card.dataset.parasites = item.parasites
         card.innerHTML =
             `
             <img class="slider__img" src="${item.img}" alt="${item.type}" >
