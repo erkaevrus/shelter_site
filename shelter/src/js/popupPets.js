@@ -46,7 +46,7 @@ function displayPopup(event) {
     }
 }
 
-document.querySelector('.slider__line').addEventListener('click', function(event) {
+document.querySelector('.our-friends__content').addEventListener('click', function(event) {
     displayPopup(event)
 }) //вешаем листнер на окно слайдера и передаем куда именно кликнули
 

@@ -235,7 +235,6 @@ function rebuildPageToTablet(event) {
         cardsOnPage = 6
         backToFirstPage()
         displayPage()
-        console.log(1)
     }
 }
 mediaToTablet.addListener(rebuildPageToTablet)

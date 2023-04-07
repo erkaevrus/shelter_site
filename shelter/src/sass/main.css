@@ -1671,20 +1671,20 @@ h5 {
 .popup__container {
   display: flex;
   width: 900px;
-  min-height: 500px;
+  height: 500px;
   border-radius: 9px;
   background-color: #FAFAFA;
 }
 @media (max-width: 1200px) {
   .popup__container {
     width: 630px;
-    min-height: 350px;
+    height: 350px;
   }
 }
 @media (max-width: 760px) {
   .popup__container {
     width: 240px;
-    min-height: 341px;
+    height: auto;
   }
 }
 
