@@ -21,32 +21,46 @@ function getRandomNum(min, max) {
 }
 
 
-//Генерация случайныйх индексов от 0 до endIndex. Индексы не повторяются
-function getRandomIndexes() {
-    const randomIndexes = []
-    const endIndex = 7
+//Функция тассовки массива по алгоритму Фишера-Йетса
+function shuffleArray(array) {
+    let temp = [...array]
+    for (let i = temp.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        [temp[i], temp[j]] = [temp[j], temp[i]];
+      }
+      return temp
+  }
 
-    while (randomIndexes.length <= endIndex) {
-        let index = getRandomNum(0, endIndex)
-        if (!randomIndexes.includes(index)) {
-            randomIndexes.push(index)
-        }
+
+//Генерация массива индексов. Индексы не повторяются по 8, по 6, по 3
+function getArrayIndexes() {
+    let arr = [0, 1, 2, 3, 4, 5, 6, 7]
+    const resultArr = []
+
+    let temp = shuffleArray(arr)
+
+    let first = temp.slice(0, 3)
+    let second = temp.slice(3, 6)
+    let third = temp.slice(6)
+
+    while(resultArr.length < 48) {
+        resultArr.push(...shuffleArray(first))
+        resultArr.push(...shuffleArray(second))
+        resultArr.push(...shuffleArray(third))
     }
-    return randomIndexes
+    return resultArr
 }
 
 
-//Генерация 48 объектов, где каждые 8 объектов перемешиваются в случайном порядке
+//Генерация 48 объектов по индексам
 async function getCardCollection() {
     const cardCollection = []
-    const numberOfCard = 48
     const data = await getData()//массив объектов
-    while (cardCollection.length < numberOfCard) {
-        let randomIndexes = getRandomIndexes()
-        randomIndexes.forEach(index => {
+
+    let randomIndexes = getArrayIndexes()
+    randomIndexes.forEach(index => {
         cardCollection.push(data[index])
-        })
-    }
+    })
     return cardCollection
 }
 
