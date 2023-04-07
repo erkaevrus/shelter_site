@@ -1646,11 +1646,11 @@ h5 {
   left: 0;
   width: 100vw;
   height: 100vh;
-  transform: scale(0);
-  transition: 0.4s ease-out;
+  opacity: 0;
+  transition: 0.2s ease-out;
 }
 .popup--active {
-  transform: scale(1);
+  opacity: 1;
 }
 
 .wrapper {

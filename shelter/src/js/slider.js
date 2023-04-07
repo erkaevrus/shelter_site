@@ -15,7 +15,6 @@ let lineCard = [] //сгенерированный ряд карточек
 
 
 
-
 /* ---СОЗДАНИЕ ИНДЕКСОВ--- */
 
 //Генерация рандомного числа от Min до Max
@@ -75,7 +74,10 @@ function createCards() {
 //Добавление карточек в конец
 function appendCard() {
     createCards()
-    lineCard.forEach(item => {document.querySelector('.slider__line').appendChild(item)})
+    lineCard.forEach(item => {
+        document.querySelector('.slider__line').appendChild(item)
+    })
+
 }
 
 
@@ -83,6 +85,7 @@ function appendCard() {
 function prependCard() {
     createCards()
     lineCard.forEach(item => {document.querySelector('.slider__line').prepend(item)})
+
 }
 
 
