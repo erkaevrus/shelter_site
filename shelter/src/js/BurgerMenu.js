@@ -2,7 +2,7 @@
  const hamburger = document.querySelector('.hamburger')
 
 
-// ---close/open menu by click on burger icon---
+// ---открытие/закрытие меню по клику на иконку---
 const navigation = document.querySelector('.navigation')
 const overlay = document.querySelector('.overlay')
 
@@ -19,7 +19,7 @@ hamburger.addEventListener('click', function(event) {
     toggleMenu()
 })
 
-// ---close menu by click on each link---
+// ---закрытие меню по клику на ссылки---
 const navigationLinks = document.querySelectorAll('.navigation__link')
 
 
@@ -37,7 +37,7 @@ navigationLinks.forEach(item => {
 })
 
 
-// ---close menu by click on free area---
+// ---закрытие меню по клику на свободную область---
 document.addEventListener('click', function(event) {
     if (event.target.classList.contains('navigation')) {
         return
