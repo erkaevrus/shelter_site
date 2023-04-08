@@ -36,7 +36,7 @@
 .our-friends {
     padding: 80px 0 100px;
     background-color: $color-background-main;
-    @media (max-width: 1000px) {
+    @media (max-width: 1280px) {
         padding: 80px 0 74px;
     }
     @media (max-width: 620px) {
@@ -49,10 +49,10 @@
     flex-direction: column;
     align-items: center;
     gap: 60px;
-    @media (max-width: 1000px) {
+    @media (max-width: 1280px) {
         gap: 30px;
     }
-    @media (max-width: 620px) {
+    @media (max-width: 650px) {
         gap: 42px;
     }
 }
@@ -68,13 +68,19 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    width: 1200px;
     gap: 30px 40px;
-    @media (max-width: 1000px) {
+    @media (max-width: 1275px) {
         justify-content: center;
         overflow: hidden;
+        width: 580px;
         height: 1365px;
     }
+    @media (max-width: 705px) {
+        width: 270px;
+    }
 }
+
 
 .slider__item {
     margin-bottom: 0;

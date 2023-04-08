@@ -56,11 +56,8 @@
     overflow: hidden;
     max-width: 990px;
     @media (max-width: 1200px) {
-        max-width: 630px;
+        max-width: 580px;
         align-items: center;
-    }
-    @media (max-width: 800px) {
-        max-width: 570px;
     }
     @media (max-width: 760px) {
         max-width: 270px;
@@ -69,10 +66,12 @@
 
 .slider__line {
     display: flex;
-    @extend %transition;
+    position: relative;
+    left: 0;
+    transition:all 1s ease-out;
     >.slider__item {
         margin-right: 90px;
-        @media (max-width: 800px) {
+        @media (max-width: 1200px) {
             margin-right: 40px;
         }
     }
@@ -116,3 +115,7 @@
     color: $color-dark-l;
     padding-bottom: 30px;
 }
+
+.no-transition {
+    transition: none !important;
+  }

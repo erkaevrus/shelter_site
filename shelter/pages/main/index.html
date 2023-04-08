@@ -11,9 +11,10 @@
     <title>Shelter</title>
 </head>
 <body class="body">
-    <div class="common-background">
+    <div class="overlay"></div>
+      <div class="common-background">
         <header class="header">
-            <div class="overlay"></div>
+
             <div class="container header__container">
                 <div class="header__logo-line">
                     <a class="logo" href="#">
@@ -70,52 +71,13 @@
             <h3 class="friends__title">Our friends who
                 are looking for a house</h3>
             <div class="slider">
-                <div class="btn-round btn-round--bordered"><span class="btn-round--arrow-left"></span></div>
+                <div class="slider__prev btn-round btn-round--bordered"><span class="btn-round--arrow-left"></span></div>
                 <div class="slider__container">
                     <div class="slider__line">
-                        <div class="slider__item">
-                            <img class="slider__img" src="../../src/img/friends/pets-katrine.png" alt="cat" >
-                            <p class="slider__title">Katrine</p>
-                            <button class="button button--bordered">Learn more</button>
-                        </div>
-                        <div class="slider__item">
-                            <img class="slider__img" src="../../src/img/friends/pets-jennifer.png" alt="puppy" >
-                            <p class="slider__title">Jennifer</p>
-                            <button class="button button--bordered">Learn more</button>
-                        </div>
-                        <div class="slider__item">
-                            <img class="slider__img" src="../../src/img/friends/pets-woody.png" alt="dog" >
-                            <p class="slider__title">Woody</p>
-                            <button class="button button--bordered">Learn more</button>
-                        </div>
-                        <div class="slider__item">
-                            <img class="slider__img" src="../../src/img/friends/pets-sophia.png" alt="dog" >
-                            <p class="slider__title">Sophia</p>
-                            <button class="button button--bordered">Learn more</button>
-                        </div>
-                        <div class="slider__item">
-                            <img class="slider__img" src="../../src/img/friends/pets-timmy.png" alt="dog" >
-                            <p class="slider__title">Timmy</p>
-                            <button class="button button--bordered">Learn more</button>
-                        </div>
-                        <div class="slider__item">
-                            <img class="slider__img" src="../../src/img/friends/pets-charly.png" alt="dog" >
-                            <p class="slider__title">Charly</p>
-                            <button class="button button--bordered">Learn more</button>
-                        </div>
-                        <div class="slider__item">
-                            <img class="slider__img" src="../../src/img/friends/pets-scarlet.png" alt="dog" >
-                            <p class="slider__title">Scarlett</p>
-                            <button class="button button--bordered">Learn more</button>
-                        </div>
-                        <div class="slider__item">
-                            <img class="slider__img" src="../../src/img/friends/pets-freddle.png" alt="dog" >
-                            <p class="slider__title">Freddie</p>
-                            <button class="button button--bordered">Learn more</button>
-                        </div>
+
                     </div>
                 </div>
-                <div class="btn-round btn-round--bordered"><span class="btn-round--arrow-right"></span></div>
+                <div class="slider__next btn-round btn-round--bordered"><span class="btn-round--arrow-right"></span></div>
             </div>
             <div class="button button--colored"><a href="../pets/index.html">Get to know the rest</a></div>
         </div>
@@ -207,6 +169,8 @@ our shelter</h3>
             </div>
         </div>
     </footer>
-    <script src="../../src/js/BurgerMenu.js" type="module"></script>
+    <script src="../../src/js/burgerMenu.js" type="module"></script>
+    <script src="../../src/js/slider.js" type="module"></script>
+    <script src="../../src/js/popup.js" type="module"></script>
 </body>
 </html>
