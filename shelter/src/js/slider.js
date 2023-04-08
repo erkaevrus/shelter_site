@@ -10,12 +10,16 @@ let sliderWidth = 1080 //ширина окна слайдера при теку�
 let numberOfCard = 3 //количество карточек на странице при текущей ширине экрана
 
 
-let cardIndexes = [] //псевдослучайный набор индексов карточек
-let lineCard = [] //сгенерированный ряд карточек
+let lineCard = [] //массив объектов сгенерированных карточек
 
 
+let prevArr = []
+let currArr = []
+let nextArr = []
+const endIndex = 7
 
-/* ---СОЗДАНИЕ ИНДЕКСОВ--- */
+
+/* ---ЛОГИКА СОЗДАНИЯ ИНДЕКСОВ--- */
 
 //Генерация рандомного числа от Min до Max
 function getRandomNum(min, max) {
@@ -23,28 +27,88 @@ function getRandomNum(min, max) {
 }
 
 
-//Генерация случайных индексов
-function getCardIndexes() {
-    let temp = [...cardIndexes] // запоминаем прошлое значение индексов
-    cardIndexes = []
-    const endIndex = cardsInfo.length - 1
+//Генерация стартового массива
+function getInitArr() {
 
-    while (cardIndexes.length < numberOfCard) {
+    while (currArr.length < numberOfCard) {
         let index = getRandomNum(0, endIndex)
-        if (!cardIndexes.includes(index) && !temp.includes(index)) {
-            cardIndexes.push(index)
+        if (!currArr.includes(index)) {
+            currArr.push(index)
         }
     }
+}
+
+
+//Генерация следующего массива
+function getNextArr() {
+
+    while (nextArr.length < numberOfCard) {
+        let index = getRandomNum(0, endIndex)
+        if (!currArr.includes(index) && !nextArr.includes(index)) {
+            nextArr.push(index)
+        }
+    }
+}
+
+
+//Генерация предыдущего массива
+function getPrevArr() {
+
+    while (prevArr.length < numberOfCard) {
+        let index = getRandomNum(0, endIndex)
+        if (!currArr.includes(index) && !prevArr.includes(index)) {
+            prevArr.push(index)
+        }
+    }
+}
+
+
+//Перемещение индексов при создании новой коллекции по кнопке Next
+function updateToNextArr() {
+    prevArr = [...currArr]
+    currArr = []
+    currArr = [...nextArr]
+    nextArr = []
+}
+
+
+//Перемещение индексов без создания новой коллекции по кнопке Prev
+function switchToPrevArr() {
+    let temp = [...currArr]
+    currArr = []
+    currArr = [...prevArr]
+    nextArr = [...temp]
+    prevArr = []
     temp = []
 }
+
+
+//Перемещение индексов при создании новой коллекции по кнопке Prev
+function updateToPrevArr() {
+    nextArr = [...currArr]
+    currArr = []
+    currArr = [...prevArr]
+    prevArr = []
+}
+
+
+//Перемещение индексов без создания новой коллекции по кнопке Next
+function switchToNextArr() {
+    let temp = [...currArr]
+    currArr = []
+    currArr = [...nextArr]
+    prevArr = [...temp]
+    nextArr = []
+    temp = []
+}
+
 
 
 /* ---РАБОТА С КАРТОЧКАМИ--- */
 
 //Генерация карточек
-function createCards() {
-    lineCard = [] //массив для хранения сгененированных по правилам объектов
-    getCardIndexes()
+function createCards(cardIndexes) {
+    lineCard = []
 
     cardsInfo.forEach((item, index) => {
         if (cardIndexes.includes(index)) {
@@ -71,27 +135,42 @@ function createCards() {
 }
 
 
-//Добавление карточек в конец
-function appendCard() {
-    createCards()
+//Добавление карточек при инициализации
+function initCard() {
+    getInitArr()
+    createCards(currArr)
     lineCard.forEach(item => {
         document.querySelector('.slider__line').appendChild(item)
     })
-
 }
 
 
-//Добавление карточек в начало
-function prependCard() {
-    createCards()
-    lineCard.forEach(item => {document.querySelector('.slider__line').prepend(item)})
+//Добавление карточек в конец при клике по кнопке Next
+function appendCard() {
+    getNextArr()
+    createCards(nextArr)
+    updateToNextArr()
 
+    lineCard.forEach(item => {
+        document.querySelector('.slider__line').appendChild(item)
+    })
+}
+
+
+//Добавление карточек в начало при клике по кнопке Prev
+function prependCard() {
+    getPrevArr()
+    createCards(prevArr)
+    updateToPrevArr()
+
+    lineCard.forEach(item => {
+        document.querySelector('.slider__line').prepend(item)
+    })
 }
 
 
 //Удаление карточек из начала
 function deleteCardsFromStart() {
-
     setTimeout(function () {
         let SliderItems = document.querySelectorAll('.slider__item')
         for (let i = 0; i < SliderItems.length; i++) {
@@ -137,12 +216,13 @@ function nextSlides() {
     btnNextSlides.removeEventListener('click', nextSlides)
     btnPrevSlides.removeEventListener('click', prevSlides)
 
-
     sliderLine.classList.remove('no-transition')
     let leftProp = Number((sliderLine.style.left).slice(0, -2))
 
     if (leftProp === -sliderWidth || document.querySelectorAll('.slider__item').length === numberOfCard) {
         appendCard()
+    } else {
+        switchToNextArr()
     }
 
     if (document.querySelectorAll('.slider__item').length > numberOfCard * 2) {
@@ -176,6 +256,8 @@ function prevSlides() {
         sliderLine.classList.add('no-transition')
         sliderLine.style.left = -sliderWidth + 'px'
         offset = sliderWidth
+    } else {
+        switchToPrevArr()
     }
 
     if (document.querySelectorAll('.slider__item').length > numberOfCard * 2) {
@@ -197,11 +279,6 @@ function prevSlides() {
 btnPrevSlides.addEventListener('click', prevSlides)
 
 
-//загрузка карточек при формировании дом дерева
-window.addEventListener('DOMContentLoaded', appendCard)
-
-
-
 /* ---ПЕРЕСТРОЕНИЕ СТРАНИЦЫ--- */
 
 //Перестроение карточек при переходе с Таблетки на Десктоп
@@ -213,10 +290,12 @@ function rebuildPageToDesctop(event) {
         sliderWidth = 1080
         numberOfCard = 3
         offset = 0
-        cardIndexes = []
+        currArr = []
+        nextArr = []
+        prevArr = []
         lineCard = []
         sliderLine.style.left = 0 + 'px'
-        appendCard()
+        initCard()
     }
 }
 
@@ -233,10 +312,12 @@ function rebuildPageToMobile(event) {
         sliderWidth = 310
         numberOfCard = 1
         offset = 0
-        cardIndexes = []
+        currArr = []
+        nextArr = []
+        prevArr = []
         lineCard = []
         sliderLine.style.left = 0 + 'px'
-        appendCard()
+        initCard()
     }
 }
 mediaToMobileFromTablet.addListener(rebuildPageToMobile)
@@ -252,10 +333,12 @@ function rebuildPageToTablet(event) {
         sliderWidth = 620
         numberOfCard = 2
         offset = 0
-        cardIndexes = []
+        currArr = []
+        nextArr = []
+        prevArr = []
         lineCard = []
         sliderLine.style.left = 0 + 'px'
-        appendCard()
+        initCard()
     }
 }
 mediaToTablet.addListener(rebuildPageToTablet)
