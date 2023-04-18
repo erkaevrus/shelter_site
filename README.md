@@ -1,5 +1,5 @@
 # shelter_website
-Shelter - это сайт для приюта, состоящий из двух страниц. Выполнен Адаптив и Интерактивность с помощью JavaScript.
+Shelter - это сайт приюта для животных, состоящий из двух страниц. Выполнен Адаптив и Интерактивность с помощью JavaScript.
 
 ## Ссылка на макет Figma:
 - https://disk.yandex.com/d/MuD5TzlACznB-A
@@ -11,7 +11,7 @@ https://rolling-scopes-school.github.io/erkaevrus-JSFE2023Q1/shelter/pages/main/
 ## Ссылка на ТЗ:
 https://github.com/rolling-scopes-school/tasks/blob/master/tasks/shelter/shelter.md
 
-## Функционал проекта
+## Функционал проекта:
 - страница main 
 - страница pets
 - верстка в соответствии с макетом. Проверка по Pixel Perfect
