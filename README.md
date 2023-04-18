@@ -2,8 +2,8 @@
 Shelter - это сайт для приюта, состоящий из двух страниц. Выполнен Адаптив и Интерактивность с помощью JavaScript.
 
 ## Ссылка на макет Figma:
-https://disk.yandex.com/d/MuD5TzlACznB-A
-https://www.figma.com/file/Yk6EnbY63FyG2PJTFkJDMh/shelter?t=PcqGsPV5BaG3swNG-0
+- https://disk.yandex.com/d/MuD5TzlACznB-A
+- https://www.figma.com/file/Yk6EnbY63FyG2PJTFkJDMh/shelter?t=PcqGsPV5BaG3swNG-0
 
 ## Ссылка на сайт: 
 https://rolling-scopes-school.github.io/erkaevrus-JSFE2023Q1/shelter/pages/main/index.html
